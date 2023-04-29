@@ -11,13 +11,13 @@ struct ContentView: View {
                 Rectangle()
                     .frame(height: 0)
                     .background(Color.green.opacity(0.2))
-                Spacer()
-                Text("Escolha um tema para começar a praticar")
-                Spacer()
-                LazyVGrid(columns: items) {
-                    ForEach(temaViewmodel.tema, id: \._id) {
-                        tema in
-                        TemaView(tema: tema).padding(.bottom)
+                ScrollView(showsIndicators: false) {
+                    Text("Escolha um tema para começar a praticar").font(.title3).padding()
+                    LazyVGrid(columns: items) {
+                        ForEach(temaViewmodel.tema, id: \._id) {
+                            tema in
+                            TemaView(tema: tema).padding(.bottom)
+                        }
                     }
                 }
             }

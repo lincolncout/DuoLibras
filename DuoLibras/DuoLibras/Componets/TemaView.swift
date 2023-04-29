@@ -12,7 +12,7 @@ struct TemaView: View {
     @State private var showInfo = false
     var body: some View {
         VStack {
-            NavigationLink(destination: teste() ) {
+            NavigationLink(destination: chooseView().navigationBarBackButtonHidden(true) ) {
                 AsyncImage(
                     url: URL(string: tema.imagem!),
                     content: { image in
@@ -40,11 +40,13 @@ struct TemaView: View {
         }.frame(width: 150, height: 150).background(Color.cyan).cornerRadius(15)
     }
     
-    func teste() -> some View {
-        if tema.perguntas[0].tipoPerguntas == "texto" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "texto" {
-            return PerguntaTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 20)
+    func chooseView() -> some View {
+        if tema.perguntas[0].tipoPerguntas == "texto" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "video" {
+            return PerguntaTextoVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0)
+        } else if tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "texto" {
+            return PerguntaVideoTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0)
         }
-        return PerguntaTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 20)
+        return ContentView()
     }
 }
 

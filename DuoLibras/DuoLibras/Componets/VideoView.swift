@@ -1,7 +1,7 @@
 import SwiftUI
 import WebKit
 
-struct YoutubeVideo: UIViewRepresentable {
+struct VideoView: UIViewRepresentable {
     var videoID: String
     
     func makeUIView(context: Context) -> WKWebView {
