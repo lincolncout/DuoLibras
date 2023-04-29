@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F312140A29FC8F5500817D62 /* YoutubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140929FC8F5500817D62 /* YoutubeVideo.swift */; };
+		F312140C29FC954A00817D62 /* PerguntaTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140B29FC954A00817D62 /* PerguntaTexto.swift */; };
 		F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */; };
 		F3A38E6329FB3B4A000B7B18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A38E6229FB3B4A000B7B18 /* ContentView.swift */; };
 		F3A38E6529FB3B4C000B7B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A38E6429FB3B4C000B7B18 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F312140929FC8F5500817D62 /* YoutubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideo.swift; sourceTree = "<group>"; };
+		F312140B29FC954A00817D62 /* PerguntaTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaTexto.swift; sourceTree = "<group>"; };
 		F3A38E5D29FB3B4A000B7B18 /* DuoLibras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoLibras.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoLibrasApp.swift; sourceTree = "<group>"; };
 		F3A38E6229FB3B4A000B7B18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +44,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F312140629FC8E6D00817D62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3A38E7329FB4310000B7B18 /* Informacoes.swift */,
+				F312140B29FC954A00817D62 /* PerguntaTexto.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F312140729FC8E9B00817D62 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3A38E6F29FB3B9B000B7B18 /* TemaViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F312140829FC8EAC00817D62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3A38E7129FB3BC2000B7B18 /* Temas.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F3A38E5429FB3B4A000B7B18 = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +88,10 @@
 		F3A38E5F29FB3B4A000B7B18 /* DuoLibras */ = {
 			isa = PBXGroup;
 			children = (
-				F3A38E7829FB4688000B7B18 /* Screens */,
+				F312140829FC8EAC00817D62 /* Models */,
+				F312140729FC8E9B00817D62 /* ViewModels */,
+				F312140629FC8E6D00817D62 /* Views */,
 				F3A38E7529FB437B000B7B18 /* Componets */,
-				F3A38E6E29FB3B82000B7B18 /* Tema */,
 				F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */,
 				F3A38E6229FB3B4A000B7B18 /* ContentView.swift */,
 				F3A38E6429FB3B4C000B7B18 /* Assets.xcassets */,
@@ -78,29 +108,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F3A38E6E29FB3B82000B7B18 /* Tema */ = {
-			isa = PBXGroup;
-			children = (
-				F3A38E6F29FB3B9B000B7B18 /* TemaViewModel.swift */,
-				F3A38E7129FB3BC2000B7B18 /* Temas.swift */,
-			);
-			path = Tema;
-			sourceTree = "<group>";
-		};
 		F3A38E7529FB437B000B7B18 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				F312140929FC8F5500817D62 /* YoutubeVideo.swift */,
 				F3A38E7629FB43AC000B7B18 /* TemaView.swift */,
 			);
 			path = Componets;
-			sourceTree = "<group>";
-		};
-		F3A38E7829FB4688000B7B18 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				F3A38E7329FB4310000B7B18 /* Informacoes.swift */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +192,9 @@
 				F3A38E7429FB4310000B7B18 /* Informacoes.swift in Sources */,
 				F3A38E7729FB43AC000B7B18 /* TemaView.swift in Sources */,
 				F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */,
+				F312140A29FC8F5500817D62 /* YoutubeVideo.swift in Sources */,
 				F3A38E7029FB3B9B000B7B18 /* TemaViewModel.swift in Sources */,
+				F312140C29FC954A00817D62 /* PerguntaTexto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

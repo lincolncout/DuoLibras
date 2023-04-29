@@ -5,11 +5,12 @@ struct ContentView: View {
     
     var body: some View {
         let items = [GridItem(.flexible()), GridItem(.flexible())]
-
+        
         NavigationStack{
             VStack {
-                Text("Home")
-                    .font(.title)
+                Rectangle()
+                    .frame(height: 0)
+                    .background(Color.green.opacity(0.2))
                 Spacer()
                 Text("Escolha um tema para começar a praticar")
                 Spacer()
@@ -20,12 +21,11 @@ struct ContentView: View {
                     }
                 }
             }
-            .padding()
+            .navigationTitle("Home")
             .onAppear() {
                 temaViewmodel.fetch()
             }
         }
-        
     }
 }
 
