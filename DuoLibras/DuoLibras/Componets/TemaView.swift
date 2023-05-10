@@ -1,10 +1,3 @@
-//
-//  TemaView.swift
-//  DuoLibras
-//
-//  Created by Student02 on 27/04/23.
-//
-
 import SwiftUI
 
 struct TemaView: View {
@@ -40,13 +33,13 @@ struct TemaView: View {
         }.frame(width: 150, height: 150).background(Color.cyan).cornerRadius(15)
     }
     
-    func chooseView() -> some View {
+   func chooseView() -> AnyView {
         if tema.perguntas[0].tipoPerguntas == "texto" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "video" {
-            return PerguntaTextoVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0)
+            return AnyView(PerguntaTextoVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         } else if tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "texto" {
-            return PerguntaVideoTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0)
+            return AnyView(PerguntaVideoTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         }
-        return ContentView()
+        return AnyView(ContentView())
     }
 }
 

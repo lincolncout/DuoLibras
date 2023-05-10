@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F312140A29FC8F5500817D62 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140929FC8F5500817D62 /* VideoView.swift */; };
 		F312140C29FC954A00817D62 /* PerguntaTextoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */; };
 		F312140E29FD9EDF00817D62 /* PerguntaVideoTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */; };
+		F361AB972A0AF9C90036C24E /* OptionsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361AB962A0AF9C90036C24E /* OptionsArray.swift */; };
+		F361AB992A0C43F90036C24E /* FinishedTema.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361AB982A0C43F90036C24E /* FinishedTema.swift */; };
 		F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */; };
 		F3A38E6329FB3B4A000B7B18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A38E6229FB3B4A000B7B18 /* ContentView.swift */; };
 		F3A38E6529FB3B4C000B7B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A38E6429FB3B4C000B7B18 /* Assets.xcassets */; };
@@ -21,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F312140929FC8F5500817D62 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaTextoVideo.swift; sourceTree = "<group>"; };
 		F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaVideoTexto.swift; sourceTree = "<group>"; };
+		F361AB962A0AF9C90036C24E /* OptionsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsArray.swift; sourceTree = "<group>"; };
+		F361AB982A0C43F90036C24E /* FinishedTema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTema.swift; sourceTree = "<group>"; };
 		F3A38E5D29FB3B4A000B7B18 /* DuoLibras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoLibras.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoLibrasApp.swift; sourceTree = "<group>"; };
 		F3A38E6229FB3B4A000B7B18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 				F3A38E7329FB4310000B7B18 /* Informacoes.swift */,
 				F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */,
 				F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */,
+				F361AB982A0C43F90036C24E /* FinishedTema.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -68,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				F3A38E7129FB3BC2000B7B18 /* Temas.swift */,
+				F361AB962A0AF9C90036C24E /* OptionsArray.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,7 +118,6 @@
 		F3A38E7529FB437B000B7B18 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
-				F312140929FC8F5500817D62 /* VideoView.swift */,
 				F3A38E7629FB43AC000B7B18 /* TemaView.swift */,
 			);
 			path = Componets;
@@ -192,10 +195,11 @@
 			files = (
 				F3A38E7229FB3BC2000B7B18 /* Temas.swift in Sources */,
 				F3A38E6329FB3B4A000B7B18 /* ContentView.swift in Sources */,
+				F361AB992A0C43F90036C24E /* FinishedTema.swift in Sources */,
 				F3A38E7429FB4310000B7B18 /* Informacoes.swift in Sources */,
 				F3A38E7729FB43AC000B7B18 /* TemaView.swift in Sources */,
+				F361AB972A0AF9C90036C24E /* OptionsArray.swift in Sources */,
 				F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */,
-				F312140A29FC8F5500817D62 /* VideoView.swift in Sources */,
 				F3A38E7029FB3B9B000B7B18 /* TemaViewModel.swift in Sources */,
 				F312140C29FC954A00817D62 /* PerguntaTextoVideo.swift in Sources */,
 				F312140E29FD9EDF00817D62 /* PerguntaVideoTexto.swift in Sources */,
