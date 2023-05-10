@@ -23,7 +23,7 @@ struct PerguntasTema: Codable, Hashable {
     var tipoPerguntas: String?
     var textoPerguntas: String?
     var imagemPerguntas: String?
-    var videoIdPerguntas: String?
+    var videoPerguntas: String?
     var opcoesObjeto: OpcoesTema
 }
 
@@ -36,5 +36,5 @@ struct Opcoes: Codable, Hashable {
     var opcoesCorreta: String?
     var textoOpcoes: String?
     var imagemOpcoes: String?
-    var videoIdOpcoes: String?
+    var videoOpcoes: String?
 }
