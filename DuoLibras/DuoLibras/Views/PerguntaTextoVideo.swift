@@ -41,19 +41,25 @@ struct PerguntaTextoVideo: View {
                 
             }
             
-            Text(opcoes[numPergunta].textoPerguntas!).padding()
+            if opcoes[numPergunta].textoPerguntas != "" {
+                Text(opcoes[numPergunta].textoPerguntas!).padding()
+            }
             
             ForEach(Array(opcoes[numPergunta].opcoesObjeto.opcoes.enumerated()), id: \.offset) { index, op  in
                 HStack {
                     Button(action: {
                         self.isSelected =  op.hashValue
-                        self.isSelectedAnswer = op.opcoesCorreta!
+                        if op.opcoesCorreta != "" {
+                            self.isSelectedAnswer = op.opcoesCorreta!
+                        }
                     }) {
                         chooseImage(numQuest: op.hashValue, index: index)
                     }
                     
-                    VideoPlayer(player: AVPlayer(url:  URL(string: "\(op.videoOpcoes!)")!))
-                        .frame(width: 265, height: 149)
+                    if op.videoOpcoes != "" {
+                        VideoPlayer(player: AVPlayer(url:  URL(string: "\(op.videoOpcoes!)")!))
+                            .frame(width: 265, height: 149)
+                    }
                     
                 }.frame(width: 340, height: 180).background(Color.cyan.opacity(0.5)).cornerRadius(20)
             }
@@ -121,6 +127,14 @@ struct PerguntaTextoVideo: View {
                 return AnyView(PerguntaTextoVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
             } else if opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto" {
                 return AnyView(PerguntaVideoTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+            } else if(opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "imagem"){
+                // return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+            }
+            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto"){
+                // return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+            }
+            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video"){
+                // return AnyView(PerguntaImagemVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
             }
         }
         

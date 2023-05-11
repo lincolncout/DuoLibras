@@ -2,16 +2,19 @@ import SwiftUI
 
 struct FinishedTema: View {
     var acertos: Int
+    
+    var message: String = ""
+    
     var body: some View {
-        HStack {
+        VStack {
+            
+            Text("Título")
+            Text("Textinho.. Você acertou \(acertos) pergunta(s)")
+            
             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
-                Image(systemName: "xmark")
-                    .foregroundColor(Color.gray)
+                Text("Voltar para Home").foregroundColor(Color.white).frame(width: 200, height: 50).background(Color.purple.opacity(0.5)).cornerRadius(20)
             }.isDetailLink(false)
-            Text("PARABÉNS CARAI")
-            Text("Acertos: \(acertos)")
         }
-
     }
 }
 
