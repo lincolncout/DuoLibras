@@ -38,7 +38,10 @@ struct TemaView: View {
             return AnyView(PerguntaTextoVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         } else if tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "texto" {
             return AnyView(PerguntaVideoTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+        } else if tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "imagem" {
+            return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         }
+
         return AnyView(ContentView())
     }
 }
