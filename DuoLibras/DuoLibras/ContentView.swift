@@ -21,7 +21,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Home")
+            .navigationTitle("DuoLibras")
             .onAppear() {
                 temaViewmodel.fetch()
             }
