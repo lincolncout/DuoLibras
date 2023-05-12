@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F312140C29FC954A00817D62 /* PerguntaTextoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */; };
 		F312140E29FD9EDF00817D62 /* PerguntaVideoTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */; };
+		F324D5AC2A0DBD6A008DC063 /* PerguntaImagemVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324D5AB2A0DBD6A008DC063 /* PerguntaImagemVideo.swift */; };
+		F324D5AE2A0DBDDB008DC063 /* PerguntaVideoImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324D5AD2A0DBDDB008DC063 /* PerguntaVideoImagem.swift */; };
+		F324D5B02A0DC063008DC063 /* PerguntaImagemTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324D5AF2A0DC063008DC063 /* PerguntaImagemTexto.swift */; };
 		F361AB972A0AF9C90036C24E /* OptionsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361AB962A0AF9C90036C24E /* OptionsArray.swift */; };
 		F361AB992A0C43F90036C24E /* FinishedTema.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361AB982A0C43F90036C24E /* FinishedTema.swift */; };
 		F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A38E6029FB3B4A000B7B18 /* DuoLibrasApp.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaTextoVideo.swift; sourceTree = "<group>"; };
 		F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaVideoTexto.swift; sourceTree = "<group>"; };
+		F324D5AB2A0DBD6A008DC063 /* PerguntaImagemVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaImagemVideo.swift; sourceTree = "<group>"; };
+		F324D5AD2A0DBDDB008DC063 /* PerguntaVideoImagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaVideoImagem.swift; sourceTree = "<group>"; };
+		F324D5AF2A0DC063008DC063 /* PerguntaImagemTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntaImagemTexto.swift; sourceTree = "<group>"; };
 		F361AB962A0AF9C90036C24E /* OptionsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsArray.swift; sourceTree = "<group>"; };
 		F361AB982A0C43F90036C24E /* FinishedTema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTema.swift; sourceTree = "<group>"; };
 		F3A38E5D29FB3B4A000B7B18 /* DuoLibras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoLibras.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +61,9 @@
 				F312140B29FC954A00817D62 /* PerguntaTextoVideo.swift */,
 				F312140D29FD9EDF00817D62 /* PerguntaVideoTexto.swift */,
 				F361AB982A0C43F90036C24E /* FinishedTema.swift */,
+				F324D5AB2A0DBD6A008DC063 /* PerguntaImagemVideo.swift */,
+				F324D5AD2A0DBDDB008DC063 /* PerguntaVideoImagem.swift */,
+				F324D5AF2A0DC063008DC063 /* PerguntaImagemTexto.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,10 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F324D5B02A0DC063008DC063 /* PerguntaImagemTexto.swift in Sources */,
 				F3A38E7229FB3BC2000B7B18 /* Temas.swift in Sources */,
 				F3A38E6329FB3B4A000B7B18 /* ContentView.swift in Sources */,
 				F361AB992A0C43F90036C24E /* FinishedTema.swift in Sources */,
 				F3A38E7429FB4310000B7B18 /* Informacoes.swift in Sources */,
+				F324D5AC2A0DBD6A008DC063 /* PerguntaImagemVideo.swift in Sources */,
+				F324D5AE2A0DBDDB008DC063 /* PerguntaVideoImagem.swift in Sources */,
 				F3A38E7729FB43AC000B7B18 /* TemaView.swift in Sources */,
 				F361AB972A0AF9C90036C24E /* OptionsArray.swift in Sources */,
 				F3A38E6129FB3B4A000B7B18 /* DuoLibrasApp.swift in Sources */,
@@ -331,6 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DuoLibras/Preview Content\"";
+				DEVELOPMENT_TEAM = QGA7223XT6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -359,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DuoLibras/Preview Content\"";
+				DEVELOPMENT_TEAM = QGA7223XT6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

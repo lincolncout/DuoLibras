@@ -1,7 +1,7 @@
 import SwiftUI
 import AVKit
 
-struct PerguntaVideoTexto: View {
+struct PerguntaImagemTexto: View {
     
     var letrasOptions = OptionsArray()
     
@@ -41,32 +41,42 @@ struct PerguntaVideoTexto: View {
                 
             }
             
-            if opcoes[numPergunta].textoPerguntas != "" {
-                Text(opcoes[numPergunta].textoPerguntas!).padding()
-            }
+            if(opcoes[numPergunta].imagemPerguntas != ""){
+                if(opcoes[numPergunta].textoPerguntas != ""){
+                    Text(opcoes[numPergunta].textoPerguntas!)
+                    AsyncImage(
+                        url: URL(string: opcoes[numPergunta].imagemPerguntas!),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 120)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
+                }
+                        }
             
-            if opcoes[numPergunta].videoPerguntas != "" {
-                VideoPlayer(player: AVPlayer(url:  URL(string: "\(opcoes[numPergunta].videoPerguntas!)")!))
-                    .frame(width: 265, height: 149).padding()
-            }
+            Spacer()
             
             ForEach(Array(opcoes[numPergunta].opcoesObjeto.opcoes.enumerated()), id: \.offset) { index, op  in
-                HStack {
-                    Button(action: {
-                        self.isSelected =  op.hashValue
-                        if op.opcoesCorreta != "" {
-                            self.isSelectedAnswer = op.opcoesCorreta!
+                            HStack {
+                                Button(action: {
+                                    self.isSelected =  op.hashValue
+                                    if op.opcoesCorreta != "" {
+                                        self.isSelectedAnswer = op.opcoesCorreta!
+                                    }
+                                }) {
+                                    chooseImage(numQuest: op.hashValue, index: index)
+                                }
+                                                    
+                                if op.textoOpcoes != "" {
+                                    Text(op.textoOpcoes!).padding()
+                                }
+                                
+                            }.frame(width: 340, height: 60, alignment: .leading).background(Color("amarelo").opacity(0.5)).cornerRadius(20)
                         }
-                    }) {
-                        chooseImage(numQuest: op.hashValue, index: index)
-                    }
-                                        
-                    if op.textoOpcoes != "" {
-                        Text(op.textoOpcoes!).padding()
-                    }
-                    
-                }.frame(width: 340, height: 60, alignment: .leading).background(Color("rosa").opacity(0.3)).cornerRadius(20)
-            }
             
             Button("Conferir") {
                 self.showPopup = true
@@ -106,7 +116,7 @@ struct PerguntaVideoTexto: View {
                 .foregroundColor(Color.white).padding(3)
                 .overlay(
                     Capsule()
-                        .stroke(Color("rosa"), lineWidth: 2)
+                        .stroke(Color("amarelo"), lineWidth: 2)
                 ).padding()
             
         } else {

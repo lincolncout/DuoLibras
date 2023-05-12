@@ -37,7 +37,7 @@ struct Informacoes: View {
                 VStack() {
                     Link("\(link.titulo!)", destination: URL(string: "\(link.endereco!)")!)
                 }
-                .foregroundColor(Color.white).frame(maxWidth: 350).padding().background(Color.blue).cornerRadius(15)
+                .foregroundColor(Color.white).frame(maxWidth: 350).padding().background(Color("azul")).cornerRadius(15)
                 
             }
         }.padding()

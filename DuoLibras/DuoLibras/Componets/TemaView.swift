@@ -30,7 +30,7 @@ struct TemaView: View {
                     Informacoes(tema: tema)
                 }
             }
-        }.frame(width: 150, height: 150).background(Color.cyan).cornerRadius(15)
+        }.frame(width: 150, height: 150).background(Color("azul")).cornerRadius(15)
     }
     
     func chooseView() -> AnyView {
@@ -41,14 +41,11 @@ struct TemaView: View {
         } else if tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "imagem" {
             return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         }
-        else if(tema.perguntas[0].tipoPerguntas == "video" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "imagem"){
-            // return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
-        }
         else if(tema.perguntas[0].tipoPerguntas == "imagem" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "texto"){
-            // return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+             return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         }
         else if(tema.perguntas[0].tipoPerguntas == "imagem" && tema.perguntas[0].opcoesObjeto.tipoOpcoes == "video"){
-            // return AnyView(PerguntaImagemVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+             return AnyView(PerguntaImagemVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
         }
         return AnyView(ContentView())
     }

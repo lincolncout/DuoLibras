@@ -10,7 +10,7 @@ struct ContentView: View {
             VStack {
                 Rectangle()
                     .frame(height: 0)
-                    .background(Color.green.opacity(0.2))
+                    .background(Color("amarelo").opacity(0.8))
                 ScrollView(showsIndicators: false) {
                     Text("Escolha um tema para começar a praticar").font(.title3).padding()
                     LazyVGrid(columns: items) {

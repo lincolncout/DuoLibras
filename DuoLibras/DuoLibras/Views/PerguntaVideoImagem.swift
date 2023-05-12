@@ -69,7 +69,7 @@ struct PerguntaVideoImagem: View {
                             }
                         )
                     }
-                }.frame(width: 340, height: 145, alignment: .leading).background(Color.cyan.opacity(0.5)).cornerRadius(20)
+                }.frame(width: 340, height: 145, alignment: .leading).background(Color("azul").opacity(0.3)).cornerRadius(20)
             }
             
             Button("Conferir") {
@@ -81,7 +81,7 @@ struct PerguntaVideoImagem: View {
                 else {
                     self.numPergunta = numPergunta + 1
                 }
-                if isSelectedAnswer == "True" {
+                if isSelectedAnswer.uppercased() == "TRUE" {
                     self.acertos =  acertos + 1
                     self.titleModal = "Parabéns"
                     self.messageModal = "Você acertou essa pergunta!"
@@ -110,7 +110,7 @@ struct PerguntaVideoImagem: View {
                 .foregroundColor(Color.white).padding(3)
                 .overlay(
                     Capsule()
-                        .stroke(.blue, lineWidth: 2)
+                        .stroke(Color("azul"), lineWidth: 2)
                 ).padding()
             
         } else {
@@ -122,30 +122,30 @@ struct PerguntaVideoImagem: View {
                 .foregroundColor(Color.white).padding(3)
                 .overlay(
                     Capsule()
-                        .stroke(.gray, lineWidth: 2)
+                        .stroke(Color("cinza").opacity(0.7), lineWidth: 2)
                 ).padding()
         }
     }
     
     func chooseView(pergunta: Int) -> AnyView {
-            if isLast {
-                return AnyView(FinishedTema(acertos: acertos).navigationBarBackButtonHidden(true))
-            } else {
-                if opcoes[pergunta].tipoPerguntas == "texto" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video" {
-                    return AnyView(PerguntaTextoVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
-                } else if opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto" {
-                    return AnyView(PerguntaVideoTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
-                } else if(opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "imagem"){
-                    return AnyView(PerguntaVideoImagem(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
-                }
-                else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto"){
-                    // return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
-                }
-                else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video"){
-                    // return AnyView(PerguntaImagemVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
-                }
+        if isLast {
+            return AnyView(FinishedTema(acertos: acertos).navigationBarBackButtonHidden(true))
+        } else {
+            if opcoes[pergunta].tipoPerguntas == "texto" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video" {
+                return AnyView(PerguntaTextoVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+            } else if opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto" {
+                return AnyView(PerguntaVideoTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+            } else if(opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "imagem"){
+                 return AnyView(PerguntaVideoImagem(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
             }
-            
-            return AnyView(ContentView().navigationBarBackButtonHidden(true))
+            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto"){
+                 return AnyView(PerguntaImagemTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+            }
+            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video"){
+                 return AnyView(PerguntaImagemVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+            }
         }
+        
+        return AnyView(ContentView().navigationBarBackButtonHidden(true))
+    }
 }
