@@ -1,7 +1,7 @@
 import SwiftUI
 import AVKit
 
-struct PerguntaTextoVideo: View {
+struct PerguntaImagemVideo: View {
     
     var letrasOptions = OptionsArray()
     
@@ -41,22 +41,31 @@ struct PerguntaTextoVideo: View {
                 
             }
             
-            if opcoes[numPergunta].textoPerguntas != "" {
-                Text(opcoes[numPergunta].textoPerguntas!).padding()
+            Text(opcoes[numPergunta].textoPerguntas!).padding()
+            
+            if(opcoes[numPergunta].imagemPerguntas != ""){
+                AsyncImage(
+                    url: URL(string: opcoes[numPergunta].imagemPerguntas!),
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 120)
+                    },
+                    placeholder: {
+                        ProgressView()
+                    }
+                )
             }
             
             ForEach(Array(opcoes[numPergunta].opcoesObjeto.opcoes.enumerated()), id: \.offset) { index, op  in
                 HStack {
                     Button(action: {
                         self.isSelected =  op.hashValue
-                        if op.opcoesCorreta != "" {
-                            self.isSelectedAnswer = op.opcoesCorreta!
-                        }
+                        self.isSelectedAnswer = op.opcoesCorreta!
                     }) {
                         chooseImage(numQuest: op.hashValue, index: index)
                     }
-                    
-                    if op.videoOpcoes != "" {
+                    if(op.videoOpcoes != ""){
                         VideoPlayer(player: AVPlayer(url:  URL(string: "\(op.videoOpcoes!)")!))
                             .frame(width: 265, height: 149)
                     }
@@ -120,24 +129,24 @@ struct PerguntaTextoVideo: View {
     }
     
     func chooseView(pergunta: Int) -> AnyView {
-        if isLast {
-            return AnyView(FinishedTema(acertos: acertos).navigationBarBackButtonHidden(true))
-        } else {
-            if opcoes[pergunta].tipoPerguntas == "texto" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video" {
-                return AnyView(PerguntaTextoVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
-            } else if opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto" {
-                return AnyView(PerguntaVideoTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
-            } else if(opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "imagem"){
-                // return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+            if isLast {
+                return AnyView(FinishedTema(acertos: acertos).navigationBarBackButtonHidden(true))
+            } else {
+                if opcoes[pergunta].tipoPerguntas == "texto" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video" {
+                    return AnyView(PerguntaTextoVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+                } else if opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto" {
+                    return AnyView(PerguntaVideoTexto(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+                } else if(opcoes[pergunta].tipoPerguntas == "video" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "imagem"){
+                    // return AnyView(PerguntaVideoImagem(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+                }
+                else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto"){
+                    // return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
+                }
+                else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video"){
+                    return AnyView(PerguntaImagemVideo(opcoes: opcoes, numPergunta: pergunta, acertos: acertos).navigationBarBackButtonHidden(true))
+                }
             }
-            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "texto"){
-                // return AnyView(PerguntaImagemTexto(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
-            }
-            else if(opcoes[pergunta].tipoPerguntas == "imagem" && opcoes[pergunta].opcoesObjeto.tipoOpcoes == "video"){
-                // return AnyView(PerguntaImagemVideo(opcoes: tema.perguntas, numPergunta: 0, acertos: 0))
-            }
+            
+            return AnyView(ContentView().navigationBarBackButtonHidden(true))
         }
-        
-        return AnyView(ContentView().navigationBarBackButtonHidden(true))
-    }
 }
